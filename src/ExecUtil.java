@@ -5,14 +5,18 @@ import java.util.Map;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 
 public class ExecUtil {
+	//Logger
+	private static final Log logger = LogFactory.get();
 	public static String path = System.getProperty("user.dir");
 
 	public static void main(String[] args) {
-		/*if (args != null && args[0] != null) {
+		if (args != null && args[0] != null) {
 			if ("item".equals(args[0])) {
 				addItemRestrict();
 			} else if ("user".equals(args[0])) {
@@ -20,13 +24,17 @@ public class ExecUtil {
 			} else if ("group".equals(args[0])) {
 				addGroupRestrict();
 			}
-		}*/
-		addItemRestrict();
-		addUserRestrict();
-		addGroupRestrict();
+		} else {
+			addItemRestrict();
+
+			addUserRestrict();
+
+			addGroupRestrict();
+		}
 	}
 
 	private static void addItemRestrict() {
+		logger.info("Run addItemRestrict Method");
 		Map<String, JSONObject> dataMap = readExcel("ItemRestrict.xlsx");
 		System.out.println(dataMap);
 		if (dataMap != null && !dataMap.isEmpty()) {
@@ -34,9 +42,11 @@ public class ExecUtil {
 				SmsApi.addRestrictItem(dataMap.get(key));
 			}
 		}
+		logger.info("Finish addItemRestrict Method");
 	}
 
 	private static void addUserRestrict() {
+		logger.info("Run addUserRestrict Method");
 		Map<String, JSONObject> dataMap = readExcel("UserRestrict.xlsx");
 		System.out.println(dataMap);
 		if (dataMap != null && !dataMap.isEmpty()) {
@@ -44,9 +54,11 @@ public class ExecUtil {
 				SmsApi.addRestrictUser(dataMap.get(key));
 			}
 		}
+		logger.info("Finish addUserRestrict Method");
 	}
 
 	private static void addGroupRestrict() {
+		logger.info("Run addGroupRestrict Method");
 		Map<String, JSONObject> dataMap = readExcel("GroupRestrict.xlsx");
 		System.out.println(dataMap);
 		if (dataMap != null && !dataMap.isEmpty()) {
@@ -54,6 +66,7 @@ public class ExecUtil {
 				SmsApi.addRestrictUserGroup(dataMap.get(key));
 			}
 		}
+		logger.info("Finish addGroupRestrict Method");
 	}
 
 	private static Map<String, JSONObject> readExcel(String fileName) {

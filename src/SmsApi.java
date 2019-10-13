@@ -10,8 +10,7 @@ public class SmsApi {
 	private static Setting setting = new Setting(new File(ExecUtil.path + "/config.setting"), true);
 
 	public static void main(String[] args) {
-		JSONObject json = new JSONObject("{'instanceId': 'Stock.CostAllocationInstance640','entityIds': ['393.14-32 201']}");
-		addRestrictItem(json);
+		System.out.println(getToken());
 	}
 
 	public static String getToken() {

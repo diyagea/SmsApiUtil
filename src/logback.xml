@@ -1,0 +1,56 @@
+<configuration xmlns="http://ch.qos.logback/xml/ns/logback" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd">
+	<!-- Console Log -->
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<!--过滤器,打印非Debug级别的日志-->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>TRACE</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>ACCEPT</onMismatch>
+		</filter>
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- SYS Trace Log File -->
+	<appender name="SYS_TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--过滤器,打印非Debug级别的日志-->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>DENY</onMatch>
+			<onMismatch>ACCEPT</onMismatch>
+		</filter>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/TRACE.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<!-- SYS Error Log File -->
+	<appender name="SYS_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<append>true</append>
+        <!--过滤器,只打ERROR级别的日志-->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/ERROR.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>12</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<root level="TRACE">
+		<appender-ref ref="Console"/>
+		<appender-ref ref="SYS_TRACE"/>
+		<appender-ref ref="SYS_ERROR"/>
+	</root>
+</configuration>

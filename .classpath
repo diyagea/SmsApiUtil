@@ -2,15 +2,18 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/hutool/hutool-all-4.0.6.jar" sourcepath="E:/DEV/code-ref/jars/hutool/hutool-all-4.0.6-sources.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/apache-poi-bin-4.1.0/poi-4.1.0/poi-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/apache-poi-bin-4.1.0/poi-4.1.0/poi-excelant-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/apache-poi-bin-4.1.0/poi-4.1.0/poi-ooxml-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/apache-poi-bin-4.1.0/poi-4.1.0/poi-ooxml-schemas-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/apache-poi-bin-4.1.0/poi-4.1.0/poi-scratchpad-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/commons-compress-1.19-bin/commons-compress-1.19/commons-compress-1.19.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/commons-collections4-4.4-bin/commons-collections4-4.4/commons-collections4-4.4.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/commons-lang3-3.3.2-bin/commons-lang3-3.3.2/commons-lang3-3.3.2.jar"/>
-	<classpathentry kind="lib" path="E:/DEV/code-ref/jars/xmlbeans-bin-3.1.0/xmlbeans-3.1.0/lib/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-compress-1.19.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/hutool-all-4.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/poi-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-4.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/log/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/log/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/log/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
