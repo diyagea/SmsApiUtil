@@ -8,7 +8,7 @@ import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 
-public class generateHierarchyExcel {
+public class RunGenerateHierarchy {
 	//Logger
 	private static final Log logger = LogFactory.get();
 	public static String path = System.getProperty("user.dir");
@@ -34,7 +34,7 @@ public class generateHierarchyExcel {
 		// 关闭writer，释放内存
 		writer.close();
 		
-		logger.info("生成数据完成！");
+		logger.info("HierachyData数据生成完成！");
 
 	}
 

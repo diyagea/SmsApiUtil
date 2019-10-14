@@ -4,14 +4,18 @@ import java.util.HashMap;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONObject;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import cn.hutool.setting.Setting;
 
 public class SmsApi {
-	private static Setting setting = new Setting(new File(ExecUtil.path + "/config.setting"), true);
+	//Logger
+	private static final Log logger = LogFactory.get();
+	private static Setting setting = new Setting(new File(RunAddRestrict.path + "/config.setting"), true);
 
-	public static void main(String[] args) {
-		System.out.println(getToken());
-	}
+	/*	public static void main(String[] args) {
+			System.out.println(getToken());
+		}*/
 
 	public static String getToken() {
 		//parameter map
@@ -55,7 +59,7 @@ public class SmsApi {
 				.timeout(20000)//超时，毫秒
 				.execute().body();
 
-		System.out.println(result);
+		logger.info(result);
 	}
 
 	//https://test.vending.allting.com/StockAdministration/CostAllocationInstanceUserRelations/SaveMany
@@ -74,7 +78,7 @@ public class SmsApi {
 				.timeout(20000)//超时，毫秒
 				.execute().body();
 
-		System.out.println(result);
+		logger.info(result);
 	}
 
 	//https://test.vending.allting.com/StockAdministration/CostAllocationInstanceUserGroupRelations/SaveMany
@@ -94,7 +98,7 @@ public class SmsApi {
 				.timeout(20000)//超时，毫秒
 				.execute().body();
 
-		System.out.println(result);
+		logger.info(result);
 	}
 
 	public static void getHierarchy() {

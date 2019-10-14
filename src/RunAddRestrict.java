@@ -10,13 +10,13 @@ import cn.hutool.log.LogFactory;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 
-public class ExecUtil {
+public class RunAddRestrict {
 	//Logger
 	private static final Log logger = LogFactory.get();
 	public static String path = System.getProperty("user.dir");
 
 	public static void main(String[] args) {
-		if (args != null && args[0] != null) {
+		if (args != null && args.length > 0 && args[0] != null) {
 			if ("item".equals(args[0])) {
 				addItemRestrict();
 			} else if ("user".equals(args[0])) {
@@ -30,6 +30,8 @@ public class ExecUtil {
 			addUserRestrict();
 
 			addGroupRestrict();
+
+			System.out.println("Finish!");
 		}
 	}
 
